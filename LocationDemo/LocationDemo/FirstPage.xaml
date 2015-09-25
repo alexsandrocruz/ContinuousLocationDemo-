@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LocationDemo.FirstPage">
+  <StackLayout>
+
+    <Button x:Name="btnGetLocation"
+                      Text="Get Current Location"
+                      BackgroundColor="#00aeef"
+                      TextColor="White"
+                      Clicked="OnGetLocationClicked"/>
+    <ListView x:Name="listGeolocations"
+               SeparatorVisibility="Default" HasUnevenRows="true">
+
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Padding="20">
+              <Label Text="{Binding Latitude, StringFormat= '{0} Latitude'}"/>
+              <Label Text="{Binding Longitude, StringFormat= '{0} Longitude'}"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>
